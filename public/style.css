@@ -1,0 +1,295 @@
+.cont{
+    background: linear-gradient(to top right, rgb(120,143,147,0.5), rgba(11, 12, 12, 0.692), rgb(2, 2, 2,0.9));
+}   
+.inputcon{
+    height:80%;
+    width: 60%;
+    display: flex;
+    overflow: hidden;
+    background-color: whitesmoke;
+    border-radius: 20px;
+
+
+}
+.bgcon{
+    width: 50%;
+    height: 100%;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/IMG_0360.jpeg?alt=media&token=dc3d563e-23f8-491f-903e-ecb60fb3d461);
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    background-color: black;
+    border-radius: 20px;
+}
+
+.contsignup{
+    width: 50%;
+    height: 100%;
+        display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+.contsignup2{
+    width: 80%;
+    height: 70%;
+
+}
+
+.googlebtn{
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/google-svgrepo-com.svg?alt=media&token=4d164314-9033-4b5a-9126-e8beb6cef597);
+    background-position: -7px;
+    background-size: 38%;
+    background-color: rgb(22, 21, 21);
+    color:whitesmoke ;
+    background-repeat: no-repeat;
+    border: none;
+    width: 43%;
+    height: 28px;
+    border-radius: 20px;
+    font-size: 8px;
+    text-indent: 15px;
+    font-weight: 700;
+    text-transform: capitalize;
+    transition: 1s background ease-in;
+
+
+}
+.githubbtn{
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/github-svgrepo-com.svg?alt=media&token=a8aaf42c-a994-4ebd-ba76-03d6b64b9579);
+    background-position: 5px;
+    background-size: 18%;
+    background-color: rgb(95, 93, 93);
+    color:whitesmoke ;
+    background-repeat: no-repeat;
+    border: none;
+    width: 43%;
+    height: 28px;
+    border-radius: 20px;
+    font-size: 8px;
+    text-indent: 15px;
+    font-weight: 700;
+    text-transform: capitalize;
+    transition: 2s background ease-in;
+}
+
+.googlebtn:hover{
+    background-color: rgb(78, 76, 76);
+}
+
+.githubbtn:hover{
+    background-color: rgb(44, 42, 42);
+}
+
+.btndiv{
+    width: 100%;
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#showTha{
+
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/eye-open-svgrepo-com.svg?alt=media&token=bd480435-9dc4-4d08-80fd-db483d4ef6a2);
+    background-position: 0px 3px;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+#Hide{
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/eye-closed-svgrepo-com.svg?alt=media&token=200c211b-8144-461e-94a8-2eb1ee4189f3);
+    background-position: 0px 3px;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.passdiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 33px;
+    background-color: #405158b6;
+    border-radius: 15px;
+
+}
+
+#upPassword{
+    width: 90%;
+    height: 100%;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/lock-alt-svgrepo-com.svg?alt=media&token=4d223221-f8be-470e-94c6-528a4ac607ef);
+    background-position: 12px;
+    background-size: 7%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    text-indent: 25px;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    color: whitesmoke;
+
+}
+
+::placeholder{
+    color: whitesmoke;
+    font-size: 14px; 
+    text-indent: 25px ;
+}
+
+
+
+.dispass{
+    width:10%;
+    height: 100%;
+}
+
+ #lastName, #fistName{
+    text-indent: 25px;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    background-color: #405158b6;
+    width: 100%;
+    height: 33px;
+    border-radius: 15px;
+    color: whitesmoke;
+    font-size: 14px;
+    text-transform: capitalize;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/person-svgrepo-com.svg?alt=media&token=540b81b9-52ba-4201-8c7a-815b7b99042e);
+    background-position: 8px 3px;
+    background-size: 8%;
+    background-repeat: no-repeat;
+}
+
+#upEmail{
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/mail-svgrepo-com.svg?alt=media&token=799406d4-3dae-4655-a8f9-ef66c2b6804c);
+    background-position: 6px 3px;
+    background-size: 10%;
+    background-repeat: no-repeat;
+    text-indent: 25px;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    background-color: #405158b6;
+    width: 100%;
+    height: 33px;
+    border-radius: 15px;
+    color: whitesmoke;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+label{
+    font-size: 10px; 
+    font-weight: 700;
+    color: #0a171d;
+    text-indent: 10px;
+    text-transform:capitalize;
+
+}
+
+h3{
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: -20px;
+    text-transform:capitalize;
+    color: #0a171d;
+
+}
+
+
+#upThrowError{
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 15px;
+    font-size: 14px ;
+    text-align: center;
+    text-indent: 0px 20px;
+
+}
+p, a{
+    font-size: 13px;
+    text-indent: 15px;
+}
+
+a{
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+@media only screen and (max-width:900px) {
+    .inputcon{
+        height:80%;
+        width: 90%;
+        overflow: hidden;
+        display: block;
+        background-color: whitesmoke;
+        border-radius: 20px;
+    
+    
+    }
+
+    .bgcon{
+        width: 100%;
+        height: 40%;
+        background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/IMG_0360.jpeg?alt=media&token=dc3d563e-23f8-491f-903e-ecb60fb3d461);
+        background-position: center;
+        background-size: 100% 100%;
+        overflow: hidden;
+        background-color: black;
+        border-radius: 20px;
+    }
+}
+@media only screen and (max-width:500px) {
+    .inputcon{
+        height:100%;
+        width: 100%;
+        overflow: hidden;
+        display: block;
+        background-color: whitesmoke;
+        border-radius: 0px;
+    
+    
+    }
+
+    .bgcon{
+        width: 100%;
+        height: 37%;
+        background-image:linear-gradient(rgba(7, 7, 7, 0.8),rgba(151, 96, 44, 0),rgba(194, 98, 9, 0.192)), url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/IMG_0285.jpeg?alt=media&token=0ca97198-b7c7-415a-bb32-30900892d97d);
+        background-position: center;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        border-radius: 0px 0px 20px 20px;
+    }
+    h3{
+        font-size: 30px;
+        color: #ffffff;
+        position: absolute;
+        top: 50px;
+    
+    }
+
+    .contsignup{
+        width: 100%;
+        height: 60%;
+    }
+
+    .contsignup2{
+        margin-top: 40px;;
+        height: 90%;
+    
+    }
+
+    label{
+        font-size: 14px; 
+        text-indent: 10px;
+    
+    }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content= "width=device-width, user-scalable=nр">
+    <title>Dashboard</title>
+
+</head>
+<body>
+    <nav style="display: flex; justify-content: space-between; align-items: center;">
+    <h2>WORLD</h2>
+    <div style="display: flex; justify-content: space-between; align-items: center; gap: 0px 15px">
+    <div id="userInfo" style="display: flex; justify-content: center; align-items: center ; gap: 0px 20px; "></div>
+    <button onclick="signOuted()">Sign Out</button>
+</div>
+</nav>
+
+
+    <script src="script.js" type="module"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+        import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyB1yCos0o7Yg6SAfkbyYvjzaBlyBX-4Fgk",
+            authDomain: "level-2-pro-ec7a2.firebaseapp.com",
+            databaseURL: "https://level-2-pro-ec7a2-default-rtdb.firebaseio.com",
+            projectId: "level-2-pro-ec7a2",
+            storageBucket: "level-2-pro-ec7a2.appspot.com",
+            messagingSenderId: "142882773417",
+            appId: "1:142882773417:web:52c047b94285321efd4cb8"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const database = getDatabase(app);
+
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                const userId = user.uid;
+
+                const userRef = ref(database, `users/${userId}`);
+
+                get(userRef).then((snapshot) => {
+                    let theirName = user.displayName
+                    let email = user.email
+                    let pic = user.photoURL
+                    const userInfoDiv = document.getElementById('userInfo');
+                    userInfoDiv.innerHTML = `
+                    <h3>Welcome ${user.displayName}</h3>
+                    <p>Your email is ${user.email}</p>
+                    <img src=${pic} alt="Profile pic" / width="30" style="border-radius: 50% ;">
+                    `;
+                    console.log(user);
+                    if (snapshot.exists()) {
+                        const userData = snapshot.val();
+                        userInfoDiv.innerHTML =`<h3>Welcome: ${userData.firstName} ${userData.lastName}</h3>
+                        <img src=${pic} alt="Profile pic" / width="20" style="border-radius: 50% ;">
+                        `
+                    } else {
+                        console.log("No data available");
+                    }
+                }).catch((error) => {
+                    console.error(error);
+                });
+            } else {
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+
+</html>
