@@ -127,7 +127,8 @@ const signUp = () => {
   let userLastName = document.getElementById('lastName').value
   let userUpEmail = document.getElementById('upEmail').value
   let userUpPassword = document.getElementById('upPassword').value
-  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
   if (userFirstName == "" || userLastName == "" || userUpEmail == "" || userUpPassword == "") {
     document.getElementById('upThrowError').style="background-color: rgb(247, 177, 177);     color: rgb(170, 4, 4); height: 30px;"
     document.getElementById('upThrowError').innerHTML = "Fill the empty input"
@@ -138,8 +139,17 @@ const signUp = () => {
   }
 
   else if (!passwordRegex.test(userUpPassword)) {
-    document.getElementById('upThrowError').style="background-color: rgb(247, 177, 177);     color: rgb(170, 4, 4); height: 30px;"
-    document.getElementById('upThrowError').innerHTML = "Password must be at least 8 with Uppercase";
+    document.getElementById('upThrowError').style="background-color: rgb(247, 177, 177);     color: rgb(170, 4, 4); height: 30px; font-size: 12px;"
+    document.getElementById('upThrowError').innerHTML = "Weak Password()";
+    setTimeout(() => {
+      document.getElementById('upThrowError').style=""
+      document.getElementById('upThrowError').innerHTML = "";
+    }, 5000);
+  }
+
+  else if(!emailRegex.test(userUpEmail)){
+        document.getElementById('upThrowError').style="background-color: rgb(247, 177, 177);     color: rgb(170, 4, 4); height: 30px"
+    document.getElementById('upThrowError').innerHTML="Enter a valid email address"
     setTimeout(() => {
       document.getElementById('upThrowError').style=""
       document.getElementById('upThrowError').innerHTML = "";
@@ -177,6 +187,12 @@ const signUp = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        document.getElementById('upThrowError').style="background-color: rgb(247, 177, 177);     color: rgb(170, 4, 4); height: 30px"
+        document.getElementById('upThrowError').innerHTML="Email already in use"
+        setTimeout(() => {
+          document.getElementById('upThrowError').style=""
+          document.getElementById('upThrowError').innerHTML = "";
+        }, 5000);
         console.log(errorCode, errorMessage, error);
       });
   }
