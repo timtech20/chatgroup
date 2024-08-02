@@ -236,13 +236,145 @@ a{
     .bgcon{
         width: 100%;
         height: 40%;
-        background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/IMG_0360.jpeg?alt=media&token=dc3d563e-23f8-491f-903e-ecb60fb3d461);
+        background-image:linear-gradient(rgba(7, 7, 7, 0.8),rgba(151, 96, 44, 0),rgba(194, 98, 9, 0.192)), url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/IMG_0285.jpeg?alt=media&token=0ca97198-b7c7-415a-bb32-30900892d97d);
+        background-position: center;
         background-position: center;
         background-size: 100% 100%;
         overflow: hidden;
         background-color: black;
         border-radius: 20px;
     }
+
+    .contsignup{
+        width: 100%;
+        height: 60%;
+    }
+
+    h3{
+        font-size: 30px;
+        color: #ffffff;
+        position: absolute;
+        top: 50px;
+    
+    }
+
+    .contsignup{
+        width: 100%;
+        height: 60%;
+    }
+
+    .contsignup2{
+        margin-top: 40px;;
+        height: 90%;
+    
+    }
+
+    label{
+        font-size: 14px; 
+        text-indent: 10px;
+    }
+
+    #upEmail{
+        background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/email-8-svgrepo-com.svg?alt=media&token=7b4031ef-236f-4c59-b1b0-0484fe2cc02b);
+        background-position: 10px center;
+        background-size: 6.5%;
+        text-indent: 25px;
+        background-color: whitesmoke;
+        border: 2px solid #405158b6;
+        height: 43px;
+        color: #1b2427ef;
+        text-transform: none;
+        margin: 5px 0px;
+    }
+
+    #lastName, #fistName{
+        text-indent: 25px;
+        border: 2px solid #405158b6;
+        background-color: whitesmoke;
+        height: 43px;
+        color: #1b2427ef;
+        background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/person-mobile.svg?alt=media&token=438ec35a-45f6-44f8-9bd3-07fcb112613e);
+        background-position: 8px center;
+        background-size: 8%;
+        margin: 5px 0px;
+
+    }
+
+    #upPassword{
+        background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/lock-svgrepo-com.svg?alt=media&token=13f887e7-7623-42dd-a05f-f060b80dea6a);
+        background-position: 10px center;
+        background-size: 8%;
+        text-indent: 25px;
+        color: #1b2427ef;
+    
+    }
+    .passdiv{
+        height: 43px;
+        background-color:whitesmoke;
+        border: 2px solid #405158b6;
+
+
+    
+    }
+
+    .googlebtn{
+        background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/google-svgrepo-com.svg?alt=media&token=4d164314-9033-4b5a-9126-e8beb6cef597);
+        background-position: -7px;
+        background-size: 38%;
+        background-color: rgb(22, 21, 21);
+        color:whitesmoke ;
+        background-repeat: no-repeat;
+        border: none;
+        width: 47%;
+        height: 35px;
+        border-radius: 20px;
+        font-size: 10px;
+        text-indent: 15px;
+        font-weight: 700;
+        text-transform: capitalize;
+    
+    }
+    .githubbtn{
+        background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/github-svgrepo-com.svg?alt=media&token=a8aaf42c-a994-4ebd-ba76-03d6b64b9579);
+        background-position: 5px;
+        background-size: 18%;
+        background-color: rgb(95, 93, 93);
+        color:whitesmoke ;
+        background-repeat: no-repeat;
+        border: none;
+        width: 47%;
+        height: 35px;
+        border-radius: 20px;
+        font-size: 10px;
+        text-indent: 15px;
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+
+    .btndiv{
+        padding: 0px 0px;
+    }
+
+    #showTha{
+
+        background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/eye-closed-mobile.svg?alt=media&token=2a6d10be-5c2f-4aff-b4e4-bbe3b0ab0373);
+        background-position: 0px center;
+        background-size: 80%;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+    }
+    
+    #Hide{
+        background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/eye-open-mobile.svg?alt=media&token=3273002d-8e06-49eb-a687-cf7c51371e3c);
+        background-position: 0px center;
+        background-size: 80%;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+
 }
 @media only screen and (max-width:500px) {
     .inputcon{
@@ -344,26 +476,18 @@ a{
         height: 35px;
         border-radius: 20px;
         font-size: 10px;
-        text-indent: 15px;
-        font-weight: 700;
-        text-transform: capitalize;
+        text-indent: 18px;
     
     }
     .githubbtn{
         background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/github-svgrepo-com.svg?alt=media&token=a8aaf42c-a994-4ebd-ba76-03d6b64b9579);
         background-position: 5px;
         background-size: 18%;
-        background-color: rgb(95, 93, 93);
-        color:whitesmoke ;
-        background-repeat: no-repeat;
-        border: none;
         width: 47%;
         height: 35px;
         border-radius: 20px;
         font-size: 10px;
-        text-indent: 15px;
-        font-weight: 700;
-        text-transform: capitalize;
+        text-indent: 18px;
     }
 
     .btndiv{
