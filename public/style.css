@@ -386,6 +386,7 @@ a{
         background-color: whitesmoke;
         border-radius: 0px;
         overflow-y: hidden;
+        position: fixed;
     
     }
 
