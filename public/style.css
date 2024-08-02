@@ -252,7 +252,7 @@ a{
     h3{
         font-size: 30px;
         color: #ffffff;
-        position: absolute;
+        position: fixed;
         /* position: fixed; */
         top: 200px;
     
@@ -545,3 +545,17 @@ a{
     
     }
 }
+
+
+
+        @media only screen and (max-height:420px) {
+            h3{
+                font-size: 30px;
+                color: #ffffff;
+                position: fixed;
+                /* position: fixed; */
+                top: 80px;
+            
+            }
+        
+        }
