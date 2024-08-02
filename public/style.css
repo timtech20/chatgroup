@@ -225,7 +225,7 @@ a{
     .inputcon{
         height:80%;
         width: 90%;
-        overflow: hidden;
+        overflow: scroll;
         display: block;
         background-color: whitesmoke;
         border-radius: 20px;
@@ -240,7 +240,7 @@ a{
         background-position: center;
         background-position: center;
         background-size: 100% 100%;
-        overflow: hidden;
+        overflow: scroll;
         background-color: black;
         border-radius: 20px;
     }
@@ -380,7 +380,7 @@ a{
     .inputcon{
         height:100%;
         width: 100%;
-        overflow: scroll;
+        overflow: hidden;
         display: block;
         background-color: whitesmoke;
         border-radius: 0px;
