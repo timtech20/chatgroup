@@ -225,7 +225,8 @@ a{
     .inputcon{
         height:80%;
         width: 90%;
-        overflow: scroll;
+        overflow-y: scroll;
+        overflow-x: hidden;
         display: block;
         background-color: whitesmoke;
         border-radius: 20px;
@@ -234,33 +235,33 @@ a{
     }
 
     .bgcon{
-        width: 100%;
+        width: 90%;
         height: 40%;
         background-image:linear-gradient(rgba(7, 7, 7, 0.8),rgba(151, 96, 44, 0),rgba(194, 98, 9, 0.192)), url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/IMG_0285.jpeg?alt=media&token=0ca97198-b7c7-415a-bb32-30900892d97d);
         background-position: center;
         background-position: center;
         background-size: 100% 100%;
-        overflow: scroll;
+        overflow: hidden;
         background-color: black;
         border-radius: 20px;
-    }
+        position: fixed;
+        margin-top: 0px;
 
-    .contsignup{
-        width: 100%;
-        height: 60%;
     }
 
     h3{
         font-size: 30px;
         color: #ffffff;
         position: absolute;
-        top: 50px;
+        /* position: fixed; */
+        top: 200px;
     
     }
 
     .contsignup{
         width: 100%;
         height: 60%;
+        margin-top: 1000px;
     }
 
     .contsignup2{
