@@ -64,18 +64,18 @@ window.signGithub = signGithub
 
 const signOuted = () => {
   let yesss = confirm('are sure you want to sign out')
-  if(yesss==true){
-  signOut(auth)
-    .then(() => {
-      console.log('User signed out');
-      window.location.href = 'index.html'
-    })
-    .catch((error) => {
-      console.error('Error signing out:', error);
-    });
+  if (yesss == true) {
+    signOut(auth)
+      .then(() => {
+        console.log('User signed out');
+        window.location.href = 'index.html'
+      })
+      .catch((error) => {
+        console.error('Error signing out:', error);
+      });
   }
-  
-  else{
+
+  else {
     window.location.href = 'dashboard.html'
   }
 
@@ -85,9 +85,12 @@ window.signOuted = signOuted;
 const userLogin = () => {
   let userEmail = document.getElementById('email').value
   let userPassword = document.getElementById('passWord').value
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (userEmail === "" || userPassword === "") {
+    document.getElementById('throwErrorD').style = "background-color: rgb(247, 177, 177);     color: rgb(170, 4, 4); height: 30px;"
     document.getElementById('throwError').innerHTML = "Fill the empty input"
     setTimeout(() => {
+      document.getElementById('throwErrorD').style = ""
       document.getElementById('throwError').innerHTML = ""
     }, 3000)
   }
@@ -95,160 +98,155 @@ const userLogin = () => {
   else {
     signInWithEmailAndPassword(auth, userEmail, userPassword)
       .then((userCredential) => {
+        fetchAndDisplayUserData(user.uid);
         window.location.href = 'dashboard.html'
         const user = userCredential.user;
         console.log(user);
-        fetchAndDisplayUserData(user.uid);
 
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        if (errorCode === 'auth/user-not-found') {
-          // document.getElementById('trowError').innerHTML = "User not found. Please sign up first.";
-        }
-
-        else {
-          // document.getElementById('throwError').innerHTML = errorMessage;
-          document.getElementById('throwError').innerHTML = "the email or password is not correct";
-        }
+        document.getElementById('throwErrorD').style="background-color: rgb(247, 177, 177);     color: rgb(170, 4, 4); height: 30px;"
+        document.getElementById('throwError').innerHTML = "the email or password is not correct";
         setTimeout(() => {
+          document.getElementById('throwErrorD').style = ""
           document.getElementById('throwError').innerHTML = "";
         }, 5000);
       });
-  }
 
+  }
 }
 
-window.userLogin = userLogin
+  window.userLogin = userLogin
 
-const signUp = () => {
-  let userFirstName = document.getElementById('fistName').value
-  let userLastName = document.getElementById('lastName').value
-  let userUpEmail = document.getElementById('upEmail').value
-  let userUpPassword = document.getElementById('upPassword').value
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
-  if (userFirstName == "" || userLastName == "" || userUpEmail == "" || userUpPassword == "") {
-    document.getElementById('upThrowError').style="background-color: rgb(247, 177, 177);     color: rgb(170, 4, 4); height: 30px;"
-    document.getElementById('upThrowError').innerHTML = "Fill the empty input"
-    setTimeout(() => {
-        document.getElementById('upThrowError').style=""
-      document.getElementById('upThrowError').innerHTML = "";
-    }, 5000);
+  const signUp = () => {
+    let userFirstName = document.getElementById('fistName').value
+    let userLastName = document.getElementById('lastName').value
+    let userUpEmail = document.getElementById('upEmail').value
+    let userUpPassword = document.getElementById('upPassword').value
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+    if (userFirstName == "" || userLastName == "" || userUpEmail == "" || userUpPassword == "") {
+      document.getElementById('upThrowErrorD').style = "background-color: rgb(247, 177, 177);     color: rgb(170, 4, 4); height: 30px;"
+      document.getElementById('upThrowError').innerHTML = "Fill the empty input"
+      setTimeout(() => {
+        document.getElementById('upThrowErrorD').style = ""
+        document.getElementById('upThrowError').innerHTML = "";
+      }, 5000);
+    }
+
+    else if (!passwordRegex.test(userUpPassword)) {
+      document.getElementById('upThrowErrorD').style = "background-color: rgb(247, 177, 177);     color: rgb(170, 4, 4); height: 30px; font-size: 12px;"
+      document.getElementById('upThrowError').innerHTML = "Weak Password";
+      setTimeout(() => {
+        document.getElementById('upThrowErrorD').style = ""
+        document.getElementById('upThrowError').innerHTML = "";
+      }, 5000);
+    }
+
+    else if (!emailRegex.test(userUpEmail)) {
+      document.getElementById('upThrowError').style = "background-color: rgb(247, 177, 177);     color: rgb(170, 4, 4); height: 30px"
+      document.getElementById('upThrowError').innerHTML = "Enter a valid email address"
+      setTimeout(() => {
+        document.getElementById('upThrowError').style = ""
+        document.getElementById('upThrowError').innerHTML = "";
+      }, 5000);
+    }
+
+    else {
+
+      createUserWithEmailAndPassword(auth, userUpEmail, userUpPassword)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log(user);
+          const userId = user.uid;
+          let userData = {
+            firstName: userFirstName,
+            lastName: userLastName,
+            email: userUpEmail
+          };
+          let dbRef = ref(database, `users/${userId}`);
+          set(dbRef, userData);
+          document.getElementById('upThrowError').style = "background-color: rgb(173, 240, 173); color: rgb(5, 59, 5); height: 30px ;"
+          document.getElementById('upThrowError').innerHTML = "Account created successful";
+          setTimeout(() => {
+            document.getElementById('upThrowError').innerHTML = "";
+          }, 5000);
+
+          setTimeout(() => {
+            window.location.href = 'index.html'
+          }, 4000);
+
+
+
+
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          document.getElementById('upThrowError').style = "background-color: rgb(247, 177, 177);     color: rgb(170, 4, 4); height: 30px"
+          document.getElementById('upThrowError').innerHTML = "Email already in use"
+          setTimeout(() => {
+            document.getElementById('upThrowError').style = ""
+            document.getElementById('upThrowError').innerHTML = "";
+          }, 5000);
+          console.log(errorCode, errorMessage, error);
+        });
+    }
   }
 
-  else if (!passwordRegex.test(userUpPassword)) {
-    document.getElementById('upThrowError').style="background-color: rgb(247, 177, 177);     color: rgb(170, 4, 4); height: 30px; font-size: 12px;"
-    document.getElementById('upThrowError').innerHTML = "Weak Password()";
-    setTimeout(() => {
-      document.getElementById('upThrowError').style=""
-      document.getElementById('upThrowError').innerHTML = "";
-    }, 5000);
+  window.signUp = signUp
+
+  const resetPassword = () => {
+    const email = document.getElementById('resetEmail').value;
+
+    if (email === "") {
+      document.getElementById('resetError').innerHTML = "Please enter your email address";
+      setTimeout(() => {
+        document.getElementById('resetError').innerHTML = "";
+      }, 3000);
+    } else {
+      sendPasswordResetEmail(auth, email)
+        .then(() => {
+          document.getElementById('resetError').innerHTML = "Password reset email sent!";
+          setTimeout(() => {
+            document.getElementById('resetError').innerHTML = "";
+          }, 3000);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          document.getElementById('resetError').innerHTML = "User not found or invalid email Address";
+          setTimeout(() => {
+            document.getElementById('resetError').innerHTML = "";
+          }, 3000);
+        });
+    }
   }
 
-  else if(!emailRegex.test(userUpEmail)){
-        document.getElementById('upThrowError').style="background-color: rgb(247, 177, 177);     color: rgb(170, 4, 4); height: 30px"
-    document.getElementById('upThrowError').innerHTML="Enter a valid email address"
-    setTimeout(() => {
-      document.getElementById('upThrowError').style=""
-      document.getElementById('upThrowError').innerHTML = "";
-    }, 5000);
-  }
+  window.resetPassword = resetPassword;
 
-  else {
 
-    createUserWithEmailAndPassword(auth, userUpEmail, userUpPassword)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(user);
-        const userId = user.uid;
-        let userData = {
-          firstName: userFirstName,
-          lastName: userLastName,
-          email: userUpEmail
-        };
-        let dbRef = ref(database, `users/${userId}`);
-        set(dbRef, userData);
-        document.getElementById('upThrowError').style="background-color: rgb(173, 240, 173); color: rgb(5, 59, 5); height: 30px ;"
-        document.getElementById('upThrowError').innerHTML = "Account created successful";
-        setTimeout(() => {
-          document.getElementById('upThrowError').innerHTML = "";
-        }, 5000);
-        
-        setTimeout(() => {
-          window.location.href = 'index.html'
-        }, 4000);
 
-        
-        
-        
+
+  const fetchAndDisplayUserData = (userId) => {
+    const dbRef = ref(database, `users/${userId}`);
+    get(dbRef)
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          const userData = snapshot.val();
+          document.getElementById('firstNameDisplay').innerText = userData.firstName;
+          document.getElementById('lastNameDisplay').innerText = userData.lastName;
+          window.location.href = 'dashboard.html';
+        } else {
+          console.log("No data available");
+        }
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        document.getElementById('upThrowError').style="background-color: rgb(247, 177, 177);     color: rgb(170, 4, 4); height: 30px"
-        document.getElementById('upThrowError').innerHTML="Email already in use"
-        setTimeout(() => {
-          document.getElementById('upThrowError').style=""
-          document.getElementById('upThrowError').innerHTML = "";
-        }, 5000);
-        console.log(errorCode, errorMessage, error);
+        console.error(error);
       });
-  }
-}
-
-window.signUp = signUp
-
-const resetPassword = () => {
-  const email = document.getElementById('resetEmail').value;
-
-  if (email === "") {
-    document.getElementById('resetError').innerHTML = "Please enter your email address";
-    setTimeout(() => {
-      document.getElementById('resetError').innerHTML = "";
-    }, 3000);
-  } else {
-    sendPasswordResetEmail(auth, email)
-      .then(() => {
-        document.getElementById('resetError').innerHTML = "Password reset email sent!";
-        setTimeout(() => {
-          document.getElementById('resetError').innerHTML = "";
-        }, 3000);
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        document.getElementById('resetError').innerHTML = "User not found or invalid email Address";
-        setTimeout(() => {
-          document.getElementById('resetError').innerHTML = "";
-        }, 3000);
-      });
-  }
-}
-
-window.resetPassword = resetPassword;
-
-
-
-
-const fetchAndDisplayUserData = (userId) => {
-  const dbRef = ref(database, `users/${userId}`);
-  get(dbRef)
-    .then((snapshot) => {
-      if (snapshot.exists()) {
-        const userData = snapshot.val();
-        document.getElementById('firstNameDisplay').innerText = userData.firstName;
-        document.getElementById('lastNameDisplay').innerText = userData.lastName;
-        window.location.href = 'dashboard.html';
-      } else {
-        console.log("No data available");
-      }
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-};
+  };
 
 
 

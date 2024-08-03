@@ -1,70 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content= "width=device-width, user-scalable=nр">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, user-scalable=nр">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <div class="cont d-flex justify-content-center align-items-center  vh-100">
     <div class="inputcon  vh-50">
       <div class="bgcon"></div>
       <div class="contsignup">
         <div class="contsignup2">
-      <h3 >create account</h3>
-      <div class="btndiv">
-      <button onclick="signGoogle()" class="googlebtn">signup with google</button>
-      <button onclick="signGithub()" class="githubbtn"> signup with Github</button>
-    </div>
-  <div id="upThrowError"></div>
-    <label>first name</label>
-    <input class="form-control  " type="text" id="fistName" placeholder="First name">
-    <label>Last name</label>
-    
-    <input class="form-control" type="text" id="lastName" placeholder="Last name">
-    
-    <label>email address</address></label>
-    <input class="form-control" type="email" id="upEmail" placeholder="Email address">
-    
-    <label>Password</label>
-    <div class="passdiv">
-    <input class="form-control" type="password" id="upPassword" placeholder="Enter your password">
-    <div onclick="showPass()" class="dispass" >
-      <div id="showTha"></div>
-      <div id="Hide" class=""></div>
-    </div>
-    </div>
-    <div class="w-100 py-4">
-    <button onclick="signUp()" class="btn rounded-pill bg-dark text-white w-100">sign up</button>
-    <p>You have an account? <a href="index.html"> Sign in</a></p>
-  </div>
-  </div>
-  </div>
-  </div>
-</div>
-</div>
+          <h3>create account</h3>
+          <div class="btndiv">
+            <button onclick="signGoogle()" class="googlebtn">signup with google</button>
+            <button onclick="signGithub()" class="githubbtn"> signup with Github</button>
+          </div>
 
-    <script src="script.js" type="module"></script>
-    <script>
-       function showPass (){
-        let input = document.getElementById('upPassword') 
-        if (input.type == "password"){
-          input.type = "text"
-          document.getElementById("showTha").style.display="none"
-          document.getElementById("Hide").style.display="block"
+          <div class="signEmail"><h5>Or signup using your email address </h5></div>
+          <div id="upThrowErrorD"><div id="upThrowError"></div></div>
+          <label class="nameLabel">first name</label>
+          <input class="form-control  " type="text" id="fistName" placeholder="First name">
+          <label>Last name</label>
 
-        } else{
-          input.type="password"
-          document.getElementById("showTha").style.display="block"
-          document.getElementById("Hide").style.display="none"
+          <input class="form-control" type="text" id="lastName" placeholder="Last name">
 
-        }
+          <label>email address</label>
+          <input class="form-control" type="email" id="upEmail" placeholder="Email address">
+
+          <label>Password</label>
+          <div class="passdiv">
+            <input class="form-control" type="password" id="upPassword" placeholder="Enter your password">
+            <div onclick="showPass()" class="dispass">
+              <div id="showTha"></div>
+              <div id="Hide" class=""></div>
+            </div>
+          </div>
+          <div class="w-100 py-4">
+            <button onclick="signUp()" class="btn rounded-pill bg-dark text-white w-100">sign up</button>
+            <p>You have an account? <a href="index.html"> Sign in</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script src="script.js" type="module"></script>
+  <script>
+    function showPass() {
+      let input = document.getElementById('upPassword')
+      if (input.type == "password") {
+        input.type = "text"
+        document.getElementById("showTha").style.display = "none"
+        document.getElementById("Hide").style.display = "block"
+
+      } else {
+        input.type = "password"
+        document.getElementById("showTha").style.display = "block"
+        document.getElementById("Hide").style.display = "none"
+
       }
-    </script>
+    }
+  </script>
 
-      
+
 </body>
+
 </html>
