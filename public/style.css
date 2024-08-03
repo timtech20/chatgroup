@@ -483,7 +483,9 @@ a{
     }
 
     .btn{
-        height: 40px;
+        height: 48px;
+        font-size: 1.3em;
+        font-weight: 600;
     }
 
 
@@ -496,10 +498,10 @@ a{
         background-repeat: no-repeat;
         border: none;
         width: 47%;
-        height: 35px;
+        height: 40px;
         border-radius: 20px;
         font-size: 10px;
-        text-indent: 18px;
+        text-indent: 20px;
     
     }
     .githubbtn{
@@ -507,7 +509,7 @@ a{
         background-position: 5px;
         background-size: 18%;
         width: 47%;
-        height: 35px;
+        height: 40px;
         border-radius: 20px;
         font-size: 10px;
         text-indent: 18px;
