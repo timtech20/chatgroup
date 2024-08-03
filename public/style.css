@@ -385,6 +385,10 @@ a{
         display: none;
     }
 
+    .btn{
+        height: 58px;
+    }
+
 }
 @media only screen and (max-width:500px) {
     .inputcon{
@@ -396,6 +400,7 @@ a{
         border-radius: 0px;
         overflow-y: hidden;
         position: static;
+        margin-top: 0px;
     
     }
 
@@ -408,6 +413,7 @@ a{
         background-repeat: no-repeat;
         border-radius: 0px 0px 30px 30px;
         position: static;
+        margin-top: 0px;
     }
     h3{
         font-size: 30px;
@@ -475,6 +481,11 @@ a{
 
     
     }
+
+    .btn{
+        height: 40px;
+    }
+
 
     .googlebtn{
         background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/google-svgrepo-com.svg?alt=media&token=4d164314-9033-4b5a-9126-e8beb6cef597);
