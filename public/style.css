@@ -120,7 +120,7 @@
 
 }
 
-#upPassword {
+#upPassword, #passWord {
     width: 90%;
     height: 100%;
     background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/lock-alt-svgrepo-com.svg?alt=media&token=4d223221-f8be-470e-94c6-528a4ac607ef);
@@ -168,7 +168,7 @@
     background-repeat: no-repeat;
 }
 
-#upEmail {
+#upEmail, #email {
     background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/mail-svgrepo-com.svg?alt=media&token=799406d4-3dae-4655-a8f9-ef66c2b6804c);
     background-position: 6px 3px;
     background-size: 10%;
@@ -241,39 +241,9 @@ h5{
     margin-top: -10px;
     padding-bottom: 20px;
     text-transform: capitalize;
-}
-
-#passWord {
-    width: 90%;
-    height: 100%;
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/lock-alt-svgrepo-com.svg?alt=media&token=4d223221-f8be-470e-94c6-528a4ac607ef);
-    background-position: 12px center;
-    background-size: 7%;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    text-indent: 25px;
-    border: none;
-    box-shadow: none;
-    outline: none;
-    color: whitesmoke;
-}
-
-#email {
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/mail-svgrepo-com.svg?alt=media&token=799406d4-3dae-4655-a8f9-ef66c2b6804c);
-    background-position: 6px center;
-    background-size: 10%;
-    background-repeat: no-repeat;
-    text-indent: 25px;
-    border: none;
-    box-shadow: none;
-    outline: none;
-    background-color: #405158b6;
-    width: 100%;
-    height: 33px;
-    border-radius: 15px;
-    color: whitesmoke;
     font-size: 14px;
 }
+
 
 #throwErrorD, #upThrowErrorD {
     width: 100%;
@@ -284,14 +254,14 @@ h5{
     display: flex;
     align-items: center;
     justify-content: center;
-
+    padding-bottom: 30px;
+    
 }
 
 #throwError, #upThrowError{
     width: 60%;
-    height: 80%;
+    height: 0%;
     text-align: center;
-
 }
 
 
@@ -355,7 +325,7 @@ h5{
         margin-top: 20px;
     }
 
-    #upEmail {
+    #upEmail, #email {
         background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/email-8-svgrepo-com.svg?alt=media&token=7b4031ef-236f-4c59-b1b0-0484fe2cc02b);
         background-position: 18px center;
         background-size: 5.5%;
@@ -382,7 +352,7 @@ h5{
 
     }
 
-    #upPassword {
+    #upPassword, #passWord {
         background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/lock-svgrepo-com.svg?alt=media&token=13f887e7-7623-42dd-a05f-f060b80dea6a);
         background-position: 18px center;
         background-size: 7%;
@@ -493,7 +463,7 @@ h5{
         background-position: center;
         background-size: 100% 100%;
         background-repeat: no-repeat;
-        border-radius: 0px 0px 30px 30px;
+        border-radius: 0px 0px 25px 25px;
         position: static;
         margin-top: 0px;
     }
@@ -525,7 +495,7 @@ h5{
         margin-top: 15px;
     }
 
-    #upEmail {
+    #upEmail, #email {
         background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/email-8-svgrepo-com.svg?alt=media&token=7b4031ef-236f-4c59-b1b0-0484fe2cc02b);
         background-position: 10px center;
         background-size: 6.5%;
@@ -550,7 +520,7 @@ h5{
 
     }
 
-    #upPassword {
+    #upPassword, #passWord {
         background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/lock-svgrepo-com.svg?alt=media&token=13f887e7-7623-42dd-a05f-f060b80dea6a);
         background-position: 10px center;
         background-size: 8%;
@@ -632,6 +602,27 @@ h5{
         height: 100%;
         display: none;
     }
+}
+
+#throwErrorD, #upThrowErrorD {
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    text-indent: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+
+}
+
+#throwError, #upThrowError{
+    width: 60%;
+    height: 100%;
+    text-align: center;
+background-color: black;
 }
 
 @media only screen and (max-width:370px) {

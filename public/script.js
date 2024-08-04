@@ -94,6 +94,15 @@ const userLogin = () => {
       document.getElementById('throwError').innerHTML = ""
     }, 3000)
   }
+  else if (!emailRegex.test(userEmail)){
+        document.getElementById('throwErrorD').style = "background-color: rgb(247, 177, 177);     color: rgb(170, 4, 4); height: 30px;"
+    document.getElementById('throwError').innerHTML = "Fill the empty input"
+    setTimeout(() => {
+      document.getElementById('throwErrorD').style = ""
+      document.getElementById('throwError').innerHTML = ""
+    }, 3000)
+  
+  }
 
   else {
     signInWithEmailAndPassword(auth, userEmail, userPassword)
@@ -125,7 +134,7 @@ const userLogin = () => {
     let userLastName = document.getElementById('lastName').value
     let userUpEmail = document.getElementById('upEmail').value
     let userUpPassword = document.getElementById('upPassword').value
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const upEmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
     if (userFirstName == "" || userLastName == "" || userUpEmail == "" || userUpPassword == "") {
       document.getElementById('upThrowErrorD').style = "background-color: rgb(247, 177, 177);     color: rgb(170, 4, 4); height: 30px;"
@@ -145,7 +154,7 @@ const userLogin = () => {
       }, 5000);
     }
 
-    else if (!emailRegex.test(userUpEmail)) {
+    else if (!upEmailRegex.test(userUpEmail)) {
       document.getElementById('upThrowError').style = "background-color: rgb(247, 177, 177);     color: rgb(170, 4, 4); height: 30px"
       document.getElementById('upThrowError').innerHTML = "Enter a valid email address"
       setTimeout(() => {
