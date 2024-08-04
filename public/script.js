@@ -92,15 +92,15 @@ const userLogin = () => {
     setTimeout(() => {
       document.getElementById('throwErrorD').style = ""
       document.getElementById('throwError').innerHTML = ""
-    }, 3000)
+    }, 4000)
   }
   else if (!emailRegex.test(userEmail)){
         document.getElementById('throwErrorD').style = "background-color: rgb(247, 177, 177);     color: rgb(170, 4, 4); height: 30px;"
-    document.getElementById('throwError').innerHTML = "Fill the empty input"
+    document.getElementById('throwError').innerHTML = "Enter a valid email address"
     setTimeout(() => {
       document.getElementById('throwErrorD').style = ""
       document.getElementById('throwError').innerHTML = ""
-    }, 3000)
+    }, 4000)
   
   }
 
@@ -116,12 +116,12 @@ const userLogin = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        document.getElementById('throwErrorD').style="background-color: rgb(247, 177, 177);     color: rgb(170, 4, 4); height: 30px;"
-        document.getElementById('throwError').innerHTML = "the email or password is not correct";
+        document.getElementById('throwErrorD').style="font-size:14px; background-color: rgb(247, 177, 177);     color: rgb(170, 4, 4); height: 30px;"
+        document.getElementById('throwError').innerHTML = "Email address or password is incorrect";
         setTimeout(() => {
           document.getElementById('throwErrorD').style = ""
           document.getElementById('throwError').innerHTML = "";
-        }, 5000);
+        }, 4000);
       });
 
   }
@@ -142,7 +142,7 @@ const userLogin = () => {
       setTimeout(() => {
         document.getElementById('upThrowErrorD').style = ""
         document.getElementById('upThrowError').innerHTML = "";
-      }, 5000);
+      }, 4000);
     }
 
     else if (!passwordRegex.test(userUpPassword)) {
@@ -151,7 +151,7 @@ const userLogin = () => {
       setTimeout(() => {
         document.getElementById('upThrowErrorD').style = ""
         document.getElementById('upThrowError').innerHTML = "";
-      }, 5000);
+      }, 4000);
     }
 
     else if (!upEmailRegex.test(userUpEmail)) {
@@ -160,7 +160,7 @@ const userLogin = () => {
       setTimeout(() => {
         document.getElementById('upThrowError').style = ""
         document.getElementById('upThrowError').innerHTML = "";
-      }, 5000);
+      }, 4000);
     }
 
     else {
@@ -177,11 +177,12 @@ const userLogin = () => {
           };
           let dbRef = ref(database, `users/${userId}`);
           set(dbRef, userData);
-          document.getElementById('upThrowError').style = "background-color: rgb(173, 240, 173); color: rgb(5, 59, 5); height: 30px ;"
+          document.getElementById('upThrowErrorD').style = "background-color: rgb(173, 240, 173); color: rgb(5, 59, 5); height: 30px ;"
           document.getElementById('upThrowError').innerHTML = "Account created successful";
           setTimeout(() => {
+        document.getElementById('upThrowError').style = ""
             document.getElementById('upThrowError').innerHTML = "";
-          }, 5000);
+          }, 3000);
 
           setTimeout(() => {
             window.location.href = 'index.html'
@@ -194,12 +195,12 @@ const userLogin = () => {
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          document.getElementById('upThrowError').style = "background-color: rgb(247, 177, 177);     color: rgb(170, 4, 4); height: 30px"
+          document.getElementById('upThrowErrorD').style = "background-color: rgb(247, 177, 177);     color: rgb(170, 4, 4); height: 30px"
           document.getElementById('upThrowError').innerHTML = "Email already in use"
           setTimeout(() => {
-            document.getElementById('upThrowError').style = ""
+            document.getElementById('upThrowErrorD').style = ""
             document.getElementById('upThrowError').innerHTML = "";
-          }, 5000);
+          }, 3000);
           console.log(errorCode, errorMessage, error);
         });
     }
@@ -211,15 +212,19 @@ const userLogin = () => {
     const email = document.getElementById('resetEmail').value;
 
     if (email === "") {
+        document.getElementById('resetError').style = "background-color: rgb(247, 177, 177);     color: rgb(170, 4, 4); height: 30px;"
       document.getElementById('resetError').innerHTML = "Please enter your email address";
       setTimeout(() => {
+        document.getElementById('resetError').style = ""
         document.getElementById('resetError').innerHTML = "";
       }, 3000);
     } else {
       sendPasswordResetEmail(auth, email)
         .then(() => {
+          document.getElementById('resetError').style = "background-color: rgb(173, 240, 173); color: rgb(5, 59, 5); height: 30px"
           document.getElementById('resetError').innerHTML = "Password reset email sent!";
           setTimeout(() => {
+            document.getElementById('resetError').style = ""
             document.getElementById('resetError').innerHTML = "";
           }, 3000);
         })

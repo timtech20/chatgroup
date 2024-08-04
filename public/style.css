@@ -92,7 +92,7 @@
 #showTha {
 
     background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/eye-open-svgrepo-com.svg?alt=media&token=bd480435-9dc4-4d08-80fd-db483d4ef6a2);
-    background-position:-2px center;
+    background-position: -2px center;
     background-size: 80%;
     background-repeat: no-repeat;
     width: 100%;
@@ -101,7 +101,7 @@
 
 #Hide {
     background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/eye-closed-svgrepo-com.svg?alt=media&token=200c211b-8144-461e-94a8-2eb1ee4189f3);
-    background-position: -2px  center;
+    background-position: -2px center;
     background-size: 80%;
     background-repeat: no-repeat;
     width: 100%;
@@ -120,7 +120,8 @@
 
 }
 
-#upPassword, #passWord {
+#upPassword,
+#passWord {
     width: 90%;
     height: 100%;
     background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/lock-alt-svgrepo-com.svg?alt=media&token=4d223221-f8be-470e-94c6-528a4ac607ef);
@@ -168,7 +169,8 @@
     background-repeat: no-repeat;
 }
 
-#upEmail, #email {
+#upEmail,
+#email {
     background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/mail-svgrepo-com.svg?alt=media&token=799406d4-3dae-4655-a8f9-ef66c2b6804c);
     background-position: 6px 3px;
     background-size: 10%;
@@ -207,10 +209,12 @@ h3 {
 
 
 
-p,
+.p,
 a {
     font-size: 13px;
     text-indent: 15px;
+    text-align: left;
+    width: 100%;
 }
 
 a {
@@ -219,25 +223,28 @@ a {
     text-decoration: none;
 }
 
-.signEmail{
+.signEmail {
     width: 100%;
     margin-top: 20px;
-    border-bottom: 1px solid #405158b6;
+    border-top: 1px solid #405158b6;
     color: #0a171d;
     font-weight: 600;
     padding-left: 10px;
+    padding-bottom: 10px;
 }
 
-h5{
+h5 {
     font-size: 0.9em;
 }
-.emailLabel, .nameLabel{
+
+.emailLabel,
+.nameLabel {
     margin-top: 0px;
 }
 
 /* Login style section */
 
-.reset{
+.reset {
     margin-top: -10px;
     padding-bottom: 20px;
     text-transform: capitalize;
@@ -245,7 +252,8 @@ h5{
 }
 
 
-#throwErrorD, #upThrowErrorD {
+#throwErrorD,
+#upThrowErrorD {
     width: 100%;
     margin-top: 5px;
     border-radius: 15px;
@@ -254,19 +262,35 @@ h5{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 30px;
-    
+    padding-bottom: 0px;
+
 }
 
-#throwError, #upThrowError{
+#throwError,
+#upThrowError {
     width: 60%;
     height: 0%;
     text-align: center;
 }
 
+.btn1 {
+    height: 40px;
+    background-color: #0a171d;
+    border: none;
+    width: 100%;
+}
 
+.btn1:active{
+        background-color: #0a171dda;
+        width: 90%;
+}
 
-
+.sigbtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
 @media only screen and (max-width:900px) {
     .inputcon {
@@ -325,7 +349,8 @@ h5{
         margin-top: 20px;
     }
 
-    #upEmail, #email {
+    #upEmail,
+    #email {
         background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/email-8-svgrepo-com.svg?alt=media&token=7b4031ef-236f-4c59-b1b0-0484fe2cc02b);
         background-position: 18px center;
         background-size: 5.5%;
@@ -352,7 +377,8 @@ h5{
 
     }
 
-    #upPassword, #passWord {
+    #upPassword,
+    #passWord {
         background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/lock-svgrepo-com.svg?alt=media&token=13f887e7-7623-42dd-a05f-f060b80dea6a);
         background-position: 18px center;
         background-size: 7%;
@@ -375,7 +401,6 @@ h5{
         font-size: 20px;
         text-indent: 60px;
     }
-
 
     .googlebtn {
         background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/google-svgrepo-com.svg?alt=media&token=4d164314-9033-4b5a-9126-e8beb6cef597);
@@ -438,7 +463,9 @@ h5{
 
     .btn {
         height: 58px;
+        background-color: #0a171d;
     }
+
 
 }
 
@@ -495,7 +522,8 @@ h5{
         margin-top: 15px;
     }
 
-    #upEmail, #email {
+    #upEmail,
+    #email {
         background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/email-8-svgrepo-com.svg?alt=media&token=7b4031ef-236f-4c59-b1b0-0484fe2cc02b);
         background-position: 10px center;
         background-size: 6.5%;
@@ -520,7 +548,8 @@ h5{
 
     }
 
-    #upPassword, #passWord {
+    #upPassword,
+    #passWord {
         background-image: url(https://firebasestorage.googleapis.com/v0/b/level-2-pro-ec7a2.appspot.com/o/lock-svgrepo-com.svg?alt=media&token=13f887e7-7623-42dd-a05f-f060b80dea6a);
         background-position: 10px center;
         background-size: 8%;
@@ -543,6 +572,7 @@ h5{
         font-size: 1.3em;
         font-weight: 600;
     }
+
 
 
     .googlebtn {
@@ -604,25 +634,21 @@ h5{
     }
 }
 
-#throwErrorD, #upThrowErrorD {
+#throwErrorD,
+#upThrowErrorD {
     width: 100%;
     margin-top: 5px;
     border-radius: 15px;
     font-size: 16px;
     font-weight: 600;
-    text-indent: 0px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 30px;
 
 }
 
-#throwError, #upThrowError{
-    width: 60%;
-    height: 100%;
+#throwError,
+#upThrowError {
+    width: 100%;
+    height: 80%;
     text-align: center;
-background-color: black;
 }
 
 @media only screen and (max-width:370px) {
