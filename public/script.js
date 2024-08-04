@@ -76,7 +76,7 @@ const signOuted = () => {
   }
 
   else {
-    window.location.href = 'dashboard.html'
+    doNothing
   }
 
 };
