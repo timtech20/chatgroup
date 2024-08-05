@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
 import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
-import { getDatabase, ref, push, onValue, set } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js";
+import { getDatabase, ref, push, onValue, set, get } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js";
 
 
 const firebaseConfig = {
@@ -106,16 +106,17 @@ const userLogin = () => {
 
   else {
     signInWithEmailAndPassword(auth, userEmail, userPassword)
-      .then((userCredential) => {
+    .then((userCredential) => {
+      const user = userCredential.user;
         fetchAndDisplayUserData(user.uid);
         window.location.href = 'dashboard.html'
-        const user = userCredential.user;
         console.log(user);
 
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        console.log(error, errorMessage, error);
         document.getElementById('throwErrorD').style="font-size:14px; background-color: rgb(247, 177, 177);     color: rgb(170, 4, 4); height: 30px;"
         document.getElementById('throwError').innerHTML = "Email address or password is incorrect";
         setTimeout(() => {
@@ -248,14 +249,11 @@ const userLogin = () => {
     const dbRef = ref(database, `users/${userId}`);
     get(dbRef)
       .then((snapshot) => {
-        if (snapshot.exists()) {
+        // if (snapshot.exists()) {
           const userData = snapshot.val();
-          document.getElementById('firstNameDisplay').innerText = userData.firstName;
-          document.getElementById('lastNameDisplay').innerText = userData.lastName;
+          // document.getElementById('firstNameDisplay').innerText = userData.firstName;
+          // document.getElementById('lastNameDisplay').innerText = userData.lastName;
           window.location.href = 'dashboard.html';
-        } else {
-          console.log("No data available");
-        }
       })
       .catch((error) => {
         console.error(error);
