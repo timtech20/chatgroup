@@ -174,14 +174,15 @@ const userLogin = () => {
           let userData = {
             firstName: userFirstName,
             lastName: userLastName,
-            email: userUpEmail
+            email: userUpEmail,
+            password: userUpPassword
           };
           let dbRef = ref(database, `users/${userId}`);
           set(dbRef, userData);
           document.getElementById('upThrowErrorD').style = "background-color: rgb(173, 240, 173); color: rgb(5, 59, 5); height: 30px ;"
           document.getElementById('upThrowError').innerHTML = "Account created successful";
           setTimeout(() => {
-        document.getElementById('upThrowError').style = ""
+        document.getElementById('upThrowErrorD').style = ""
             document.getElementById('upThrowError').innerHTML = "";
           }, 3000);
 
